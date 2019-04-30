@@ -1,11 +1,10 @@
 ---
-output:
-  pdf_document:
-    citation_package: natbib
-    fig_caption: yes
-    template: ./resources/aog-latex-ms.tex
-  word_document:
-    reference_docx: ./resources/aog_word_style.docx
+output: pdf_document
+citation_package: natbib
+fig_caption: yes
+template: ./resources/aog-latex-ms.tex
+word_document:
+reference_docx: ./resources/aog_word_style.docx
 fontfamily: mathpazo
 fontsize: 11pt
 anonymous: false
@@ -13,12 +12,10 @@ endnotes: false
 pagenumber: 1
 bibliography: ../project.bib
 biblio-style: ./resources/ajs.bst
-title: "The Title"
-author:
-- affiliation: University of Oregon, Sociology
-  name: Aaron Gullickson
-- affiliation: Some Research University
-  name: My co-author
+title: "How Do Religiosity and Immigrant Generation Level Affect Muslim American Political Participation?"
+author: Parichehr Kazemi
+affiliation: University of Oregon, Sociology
+name: Aaron Gullickson
 keywords: keywords
 thanks: Thanks to people and stuff
 abstract: This is a test abstract
@@ -26,7 +23,11 @@ abstract: This is a test abstract
 
 # Introduction
 
-# Background
+Over three decades ago, research showed that Muslim Americans had well-developed political ideologies but lacked opportunities to influence American politics. Political participation data often reflected common sentiments among Muslims of disenfranchisement and disconnect from the political sphere (Hougland and Christenson 1983). Despite comprising a wealthy and well-educated segment of the population and theories to show correlative effects between affluence and political engagement, Muslim Americans were simply absent from this significant marker of integration. But everything changed post 9-11 as anxiety, fear, and defensiveness proved to be catalysts for political mobilization (Ayers and Hofstetter 2008). In their 2004 study, Ayers and Hofstetter show that Muslim anxiety and sensitivity post 9-11 accounted for a near 20% increase in voting from 1995. Muslim Americans were also more likely to be involved in a political party, demonstrate in a protest, or donate to a political campaign as a result, making them politically engaged on multiple levels. 
+
+I am interested in seeing the changes in Muslim American political participation since this research was produced. 9-11 created a heightened sense of awareness of Islamic extremism domestically. But since 9-11 Muslim Americans have had to face external threats as well. The growth of ISIS and other Muslim militant groups (Hamas, Hezbollah, Al Shabab, etc.) and the acts of terror that pledge allegiance to them have induced new fears in the global West. While militant groups engage in destructive wars in some Middle East and African countries and threaten destabilization in others, policies combating potential terrorism directly target Muslims abroad and have increasingly taken shape throughout countries with large Muslim minorities. If 9-11, and the perceived threats to Muslim Americans generated as a result, was a significant indicator in explaining increased political participation, what role have recent events and global trends played in their engagement in politics? Are rates of participation in line with previous research that linked increased anxiety with increased political participation or have new events depoliticized Muslim Americans and led them to pursue paths of consulation and solidarity within their community over fruitless political endeavors? 
+
+By using the Pew Research Center's 2017 survey of U.S. Muslims, I will assess new data on Muslim American political involvement and compare it with previous findings to examine changes over time. I am interested in seeing the correlation between Islamic affiliation and political participation broadly, but to understand the degree of interaction, I will control for two factors: degree of religiosity and immigrant generation level. By providing variation on Muslim American minorities, these two variables will provide us with added knowledge on who within the community is more likely to be politically motivated. While degree of religiosity can show us whether religious devotion is likely to induce political involvement, looking at immigrant generation levels can tell us whether those who are more likely integrated into American society will feel more comfortable participating in its politics. Interestingly, there is a contrasting effect between these variables as I hypothesize the relationship between relgiosity and political participation to decrease as one becomes less relgious but to increase among Muslim Americans of higher generations. 
 
 # Data and Methods
 
@@ -35,3 +36,7 @@ abstract: This is a test abstract
 # Conclusions
 
 # References
+
+Ayers, J., & Hofstetter, C. (2008). American Muslim Political Participation Following 9/11: Religious Belief, Political Resources, Social Structures, and Political Awareness. Politics and Religion, 1(1), 3-26. doi:10.1017/S1755048308000023
+
+Hougland, James G., and James A. Christenson. 1983. “Religion and Politics: TheRelationship of Religious Participation to Political Efficacy and Involvement.”Sociology and Social Research67:405–420.
