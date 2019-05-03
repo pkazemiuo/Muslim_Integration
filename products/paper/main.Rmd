@@ -31,6 +31,13 @@ By using the Pew Research Center's 2017 survey of U.S. Muslims, I will assess ne
 
 # Data and Methods
 
+My data comes from Pew Research Center. The data includes results from a 2017 survey, conducted over fourteen weeks in 2016, on U.S. Muslims concerning their place in society. Pew's data is the result of 1,001 phone interviews with Muslim Americans 18 or older. In identifying target respondents, researchers relied on existing data from the U.S. Census Bureau and the American Community Survey on the Muslim American community to create a sampling plan that they believe speaks to the larger diaspora of Muslim Americans nationally. This means the number of initial screening interviews was very high- at about 40,000 phone numbers- but allowed enough room to maneuver to screen-out respondents in achieving a confident sample. 
+
+Respondents were weighted and ranked which means the design took into account areas with large Muslim congregations, respondent's birth regions, multi-adult households, and adults with both landline and cellphone numbers. They then created separate frames for each, weighted phone numbers that fit into those categories and divided them between stratums ranging from, for example, "Very high Muslim density" to "lowest Muslim density." In doing this, the design could both account for duplicates and yield a high probability sample since technically each adult in the U.S. had a probability of being included in the study. 
+
+The goal of the survey was to provide a broad description of Muslim American characteristics and attitudes and therefore drew on previous surveys of Muslim Americans from 2007 and 2011 to maintain this level of efficacy. They did, however, adjust the 2017 strategy to deal with increased concerns of government surveillance and accountability. To achieve this, interviews were conducted over the phone in English or the respondent's native language if necessary. In first establishing rapport with the respondent, surveyers asked broad questions and included questions on multiple relgious backgrounds to make the respondent feel they were not being targeted based on their religious affiliations. The interview included more than one attempt to identify relgious affiliation should the respondent feel uncomfortable in revealing this information from the outset and included a $50 incentive should they complete the survey. Once the interview was under way, the surveyors followed the survey design in asking broad quesions ranging from citizenship status to perceptions on American society. 
+
+
 # Results
 
 # Conclusions

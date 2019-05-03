@@ -1,5 +1,5 @@
 # Input Directory
 
-This directory should contain unedited data files directly from the source. I typically put different data sources into different sub-directories and include any relevant data documentation in the same directory. 
+https://www.pewforum.org/dataset/2017-survey-of-u-s-muslims/ 
 
-Following the guidelines of [Code and Data](https://web.stanford.edu/~gentzkow/research/CodeAndData.xhtml#magicparlabel-270), this directory is dedicated to raw data from other sources ONLY. Datasets in this input directory should NEVER be edited. If newer data extracts are used, older raw data should just be replaced and changes commmitted. Constructed datasets should NEVER be placed in this directory. 
+I got my data sources from Pew research center. The data includes results from a 2017 survey on U.S. Muslims concerning their place in society. The survey includes questions from several sets of categories ranging from citizenship status to perceptions on American society. For my purposes, I will be using data from a few different questions concerning citizenship status (to determine voter eligibility), importance of religion (in determining degree of religiosity), voting behavior (to determine political participation), and immigrant generation level. 
