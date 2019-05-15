@@ -8,6 +8,6 @@
 
 #source in any useful functions
 source("useful_functions.R")
-setwd('~/soc312/Muslim_integration/analysis')
-library(readr)
-muslim_politics <- read.csv("input/pew_muslim_data.csv")
+
+library(haven)
+muslim_politics <- read_dta("input/Muslim-American-Final-Questionnaire/2017USMuslimPublicData - checked.dta")
