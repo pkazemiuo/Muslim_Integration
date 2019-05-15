@@ -1,10 +1,11 @@
 ---
-output: pdf_document
-citation_package: natbib
-fig_caption: yes
-template: ./resources/aog-latex-ms.tex
-word_document:
-reference_docx: ./resources/aog_word_style.docx
+output:
+  pdf_document:
+    citation_package: natbib
+    fig_caption: yes
+    template: ./resources/aog-latex-ms.tex
+  word_document:
+    reference_docx: ./resources/aog_word_style.docx
 fontfamily: mathpazo
 fontsize: 11pt
 anonymous: false
@@ -13,9 +14,9 @@ pagenumber: 1
 bibliography: ../project.bib
 biblio-style: ./resources/ajs.bst
 title: "How Do Religiosity and Immigrant Generation Level Affect Muslim American Political Participation?"
-author: Parichehr Kazemi
-affiliation: University of Oregon, Sociology
-name: Aaron Gullickson
+author:
+  - affiliation: University of Oregon, Political Science
+    name: Parichehr Kazemi
 keywords: keywords
 thanks: Thanks to people and stuff
 abstract: This is a test abstract
