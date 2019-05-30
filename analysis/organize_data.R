@@ -26,6 +26,24 @@ table(muslim_politics$pvote16b, muslim_politics$vote, exclude=NULL)
 table(muslim_politics$pvote16a, muslim_politics$vote, exclude=NULL)
 table(muslim_politics$rega, muslim_politics$vote, exclude=NULL)
 
+muslim_politics$religion <- factor(ifelse(muslim_politics$qe3==9, NA,
+                                          ifelse(muslim_politics$qe3==4, "Not at all important",
+                                                 ifelse(muslim_politics$qe3==3, "Not too important",
+                                                        ifelse(muslim_politics$qe3==2, "Somewhat Important",
+                                                               ifelse(muslim_politics$qe3==1, "Very Important", NA))))),
+                                          levels=c("Very Important", "Somewhat Important", "Not too important", "Not at all important"))
+table(muslim_politics$qe3)
+table(muslim_politics$religion)
+table(muslim_politics$father_birthregion2)
+muslim_politics$generation <- factor(ifelse(muslim_politics$respondent_birthregion2!=1, "First Generation",
+                                            ifelse((muslim_politics$father_birthregion2!=1&muslim_politics$mother_birthregion2!=1), "Second Generation", 
+                                                   ifelse(((muslim_politics$father_birthregion2!=1&muslim_politics$mother_birthregion2==1)|(muslim_politics$father_birthregion2==1&muslim_politics$mother_birthregion2!=1)), "2.5 Generation",    
+                                                   "Third Generation"))),
+levels=c("First Generation", "Second Generation", "2.5 Generation", "Third Generation"))
+table(muslim_politics$generation)
+
+table(muslim_politics$father_birthregion2, muslim_politics$mother_birthregion2)
+
 ## a bunch of other stuff
 
 analytical_data <- subset(muslim_politics, !is.na(vote),
