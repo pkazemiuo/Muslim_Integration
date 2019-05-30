@@ -9,11 +9,44 @@ output:
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(echo = FALSE, warning=FALSE, message=FALSE, fig.align="center")
 source("useful_functions.R")
+load("output/analytical_data.RData")
+library(ggplot2)
+library(texreg)
 ```
 
-# Introduction
+# Univariate distributions
+
+```{r generation, fig.cap="Distribution of generation"}
+ggplot(analytical_data, aes(x=generation))+
+  geom_bar()+
+  theme_bw()
+```
+
+It looks like the 2.5 gengeration is quite small, may need to think about collapsing this for the actual analysis.
+
+# Bivariate plots
+
+```{r vote-generation, echo=FALSE, fig.cap="Voting behavior by generation"}
+ggplot(analytical_data, aes(x=vote, y=..prop.., group=1))+
+  geom_bar()+
+  facet_wrap(~generation)+
+  labs(x="Candidate choice", y="proportion")+
+  theme_bw()
+```
+
+# Run some models
+
+```{r religiosity-generation-model, results='asis'}
+analytical_data$relig_score <-  5-as.numeric(analytical_data$religion)
+model <- lm(relig_score~generation, data=analytical_data)
+htmlreg(model, 
+        caption = "Predicting religiosity score by generation",
+        caption.above = TRUE,
+        doctype = FALSE)
+```
+
 <a href="#top">Back to top</a>
 
 Use this R Markdown to perform the main analysis for the project. I use this basically as a lab notebook. It contains the main analysis and a variety of sensitivity analysis. The code in this documents serves as a baseline for the eventual tables and figures that will go into the paper. At the same time it will serve as a record of all supplementary analyses performed. 

@@ -9,7 +9,6 @@
 #source in any useful functions
 
 source("useful_functions.R")
-setwd('~/soc312/Muslim_integration/analysis')
 library(readr)
 muslim_politics <- read.csv("input/pew_muslim_data.csv")
 
@@ -47,7 +46,7 @@ table(muslim_politics$father_birthregion2, muslim_politics$mother_birthregion2)
 ## a bunch of other stuff
 
 analytical_data <- subset(muslim_politics, !is.na(vote),
-                          select=c("vote"))
+                          select=c("vote","generation","religion"))
 
 save(analytical_data, file="output/analytical_data.RData")
 
