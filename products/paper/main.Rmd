@@ -3,7 +3,7 @@ output:
   pdf_document:
     citation_package: natbib
     fig_caption: yes
-    template: ./resources/aog-latex-ms.tex
+
   word_document:
     reference_docx: ./resources/aog_word_style.docx
 fontfamily: mathpazo
@@ -14,34 +14,205 @@ pagenumber: 1
 bibliography: ../project.bib
 biblio-style: ./resources/ajs.bst
 title: "How Do Religiosity and Immigrant Generation Level Affect Muslim American Political Participation?"
-author:
-  - affiliation: University of Oregon, Political Science
-    name: Parichehr Kazemi
+author: "Parichehr Kazemi"
+affiliation: "University of Oregon Political Science"
 keywords: keywords
-thanks: Thanks to people and stuff
-abstract: This is a test abstract
+thanks: "Thanks to Aaron Gullickson for all of his help in learning this stuff. I'm a real quanty person now because of him."
+abstract: "How politically engaged are Muslim immigrants in the United States? This paper explores the variation between a Muslim immigrant's political participation and its connection to their degrees of religiosity and immigrant generation level. Following 9-11, studies showed massive spikes in Muslim voter participation but how has this trend sustained following the 2016 elections that arguably brought new waves of Islamic hostility and anti-Muslim policies? Secondary concerns of this paper are motivated by this question and seek to theorize potential implications from the election on U.S. Muslim voting behavior."
 ---
 
 # Introduction
 
-Over three decades ago, research showed that Muslim Americans had well-developed political ideologies but lacked opportunities to influence American politics. Political participation data often reflected common sentiments among Muslims of disenfranchisement and disconnect from the political sphere (Hougland and Christenson 1983). Despite comprising a wealthy and well-educated segment of the population and theories to show correlative effects between affluence and political engagement, Muslim Americans were simply absent from this significant marker of integration. But everything changed post 9-11 as anxiety, fear, and defensiveness proved to be catalysts for political mobilization (Ayers and Hofstetter 2008). In their 2004 study, Ayers and Hofstetter show that Muslim anxiety and sensitivity post 9-11 accounted for a near 20% increase in voting from 1995. Muslim Americans were also more likely to be involved in a political party, demonstrate in a protest, or donate to a political campaign as a result, making them politically engaged on multiple levels. 
+Over three decades ago, research showed that Muslim Americans had well-developed political ideologies but lacked opportunities to influence American politics. Political participation data often reflected common sentiments among Muslims of disengagement with the political sphere (Hougland and Christenson 1983). Despite comprising a wealthy and well-educated segment of the population and theories to show correlative effects between affluence and political engagement, Muslim Americans were simply absent from this significant marker of integration. But everything changed post 9-11 as anxiety, fear, and defensiveness proved to be catalysts for political mobilization (Ayers and Hofstetter 2008). In their 2004 study, Ayers and Hofstetter show that Muslim anxiety and sensitivity post 9-11 accounted for a near 20% increase in voting from 1995. Muslim Americans were also more likely to be involved in a political party, demonstrate in a protest, or donate to a political campaign as a result, making them politically engaged on multiple levels. 
 
-I am interested in seeing the changes in Muslim American political participation since this research was produced. 9-11 created a heightened sense of awareness of Islamic extremism domestically. But since 9-11 Muslim Americans have had to face external threats as well. The growth of ISIS and other Muslim militant groups (Hamas, Hezbollah, Al Shabab, etc.) and the acts of terror that pledge allegiance to them have induced new fears in the global West. While militant groups engage in destructive wars in some Middle East and African countries and threaten destabilization in others, policies combating potential terrorism directly target Muslims abroad and have increasingly taken shape throughout countries with large Muslim minorities. If 9-11, and the perceived threats to Muslim Americans generated as a result, was a significant indicator in explaining increased political participation, what role have recent events and global trends played in their engagement in politics? Are rates of participation in line with previous research that linked increased anxiety with increased political participation or have new events depoliticized Muslim Americans and led them to pursue paths of consulation and solidarity within their community over fruitless political endeavors? 
+I am interested in seeing the changes in Muslim American political participation since this research was produced. 9-11 created a heightened sense of awareness of Islamic extremism domestically. But since then, Muslim Americans have had to face external threats as well. The growth of ISIS and other Muslim militant groups (Hamas, Hezbollah, Al Shabab, etc.) and the acts of terror that pledge allegiance to them have induced new fears in the global West. While militant groups engage in destructive wars in some Middle Eastern and African countries and threaten destabilization in others, policies combating potential terrorism directly target Muslims abroad and have increasingly taken shape throughout countries with large Muslim minorities. If 9-11, and the perceived threats to Muslim Americans generated as a result, was a significant indicator in explaining increased political participation, what role have recent events and global trends played in their political engagement? Are rates of participation in line with previous research that linked increased anxiety with increased political participation or have new events depoliticized Muslim Americans and led them to pursue paths of consulation and solidarity within their community over fruitless political endeavors? 
 
-By using the Pew Research Center's 2017 survey of U.S. Muslims, I will assess new data on Muslim American political involvement and compare it with previous findings to examine changes over time. I am interested in seeing the correlation between Islamic affiliation and political participation broadly, but to understand the degree of interaction, I will control for two factors: degree of religiosity and immigrant generation level. By providing variation on Muslim American minorities, these two variables will provide us with added knowledge on who within the community is more likely to be politically motivated. While degree of religiosity can show us whether religious devotion is likely to induce political involvement, looking at immigrant generation levels can tell us whether those who are more likely integrated into American society will feel more comfortable participating in its politics. Interestingly, there is a contrasting effect between these variables as I hypothesize the relationship between relgiosity and political participation to decrease as one becomes less relgious but to increase among Muslim Americans of higher generations. 
+By using the Pew Research Center's 2017 survey of U.S. Muslims, I will assess new data on Muslim American political involvement to posit changes over time. I am interested in seeing the correlation between Islamic affiliation and political participation broadly, but to understand the degree of interaction, I will control for two factors: degree of religiosity and immigrant generation level. By providing variation on Muslim American minorities, these two variables will provide us with added knowledge on who within the community is more likely to be politically motivated. While degree of religiosity can show us whether religious devotion is likely to induce political involvement, looking at immigrant generation levels can tell us whether those who are more likely integrated into American society will feel more comfortable participating in its politics. Perhaps atypically, I believe there to be a contrasting effect between these variables. I hypothesize the relationship between relgiosity and political participation to decrease as one becomes less religious but to increase among Muslim Americans of higher generations. 
 
 # Data and Methods
 
-My data comes from Pew Research Center. The data includes results from a 2017 survey, conducted over fourteen weeks in 2016, on U.S. Muslims concerning their place in society. Pew's data is the result of 1,001 phone interviews with Muslim Americans 18 or older. In identifying target respondents, researchers relied on existing data from the U.S. Census Bureau and the American Community Survey on the Muslim American community to create a sampling plan that they believe speaks to the larger diaspora of Muslim Americans nationally. This means the number of initial screening interviews was very high- at about 40,000 phone numbers- but allowed enough room to maneuver to screen-out respondents in achieving a confident sample. 
+My data comes from the Pew Research Center. The data is comprised of results from a 2017 survey, conducted over fourteen weeks in 2016, on U.S. Muslims' feelings towards their place in society. Pew's data is the result of 1,001 phone interviews with Muslim Americans 18 or older. In identifying target respondents, researchers relied on existing data from the U.S. Census Bureau and the American Community Survey on the Muslim American community to create a sampling plan that they believe speaks to the larger diaspora of Muslim Americans nationally. This means the number of initial screening interviews was very high- at about 40,000 phone numbers- but allowed enough room to maneuver to screen-out respondents in achieving a confident sample. 
 
 Respondents were weighted and ranked which means the design took into account areas with large Muslim congregations, respondent's birth regions, multi-adult households, and adults with both landline and cellphone numbers. They then created separate frames for each, weighted phone numbers that fit into those categories and divided them between stratums ranging from, for example, "Very high Muslim density" to "lowest Muslim density." In doing this, the design could both account for duplicates and yield a high probability sample since technically each adult in the U.S. had a probability of being included in the study. 
 
 The goal of the survey was to provide a broad description of Muslim American characteristics and attitudes and therefore drew on previous surveys of Muslim Americans from 2007 and 2011 to maintain this level of efficacy. They did, however, adjust the 2017 strategy to deal with increased concerns of government surveillance and accountability. To achieve this, interviews were conducted over the phone in English or the respondent's native language if necessary. In first establishing rapport with the respondent, surveyers asked broad questions and included questions on multiple relgious backgrounds to make the respondent feel they were not being targeted based on their religious affiliations. The interview included more than one attempt to identify relgious affiliation should the respondent feel uncomfortable in revealing this information from the outset and included a $50 incentive should they complete the survey. Once the interview was under way, the surveyors followed the survey design in asking broad quesions ranging from citizenship status to perceptions on American society. 
 
+For my methods, I created a number of data frames in order to create my variables. For example, for voters, I only included the respondents who were eligible to vote and assigned missing values to those who were not. Therefore, my data does not include underage respondents or those who were not U.S. citizens. Immigrant generation information is comprised of data on the respondent's birth region along with their mother and father's birth regions. If the respondent had one native-born and one foreign-born parent, I sorted them into a separate "2.5 Generation" category that could account for any correlation between one foreign born parent and voting outcomes. I also controlled for respondent religious denomination and birth region. Since Pew data categorized respondents into regions rather than countries - in other words, the Middle East and North Africa (MENA) was one region- I felt that accounting for demonination could partially overcome the large subsections. Since Iran is a predominantly Shia country and Iranian immigrants tend to be more conservative than their Sunni counterparts, I was interested in seeing whether there would be correlative patterns between this distribution and voting behavior, specifically for those who voted for Clinton and Trump in the last election. Lastly, as third generation respondents were the second largest category of respondents, I wanted to see whether age could be a motivating factor for voting tendencies, for example, since generally people tend to vote more (or more conservatively) as they age. 
+
+As for model selection, I have chosen univariate and bivariate distributions along with tables to display my OLS regression results. Since my sample was so small after assigning missing values to ineligible voters, this limited the variation in models I could produce. Below I have included one interaction term in Table 5 to demonstrate the infeasibility of continuing with such tables. Although I experimented with models that could better display my results, nothing seemed as intiutive as the models and tables I have chosen below. 
 
 # Results
+```{r setup, include=FALSE}
+source("useful_functions.R")
+load("C:/Users/PoliSci GE/Documents/soc312/Muslim_Integration/analysis/output/analytical_data.RData")
+library(ggplot2)
+library(texreg)
+analytical_data$yesvote <- analytical_data$vote != "No vote"
+```
+
+```{r voting_patterns, fig.cap="Distribution of Respondents Who Voted", echo=FALSE}
+ggplot(analytical_data, aes(x=yesvote))+
+  geom_bar(fill='darkblue')+
+  labs(title= "Distribution of Respondents Who Voted",
+       x="Voted", y="Number of Respondents")+
+  theme_bw()
+```
+
+The focus of this study was on voting behavior among Muslim immigrants. According to the distribution in Figure 1 above, on average, Muslims vote more than the status quo. Well over four-fifths of eligible voters voted in the last election. 
+
+Based off of this distribution, we see that most eligible voters voted for Clinton in the 2016 election. Although, there was also a substantial number of voters (101 in total) who, although eligible, did not vote. Lastly, around 63 of the respondents reported voting third party and only 39 voted for Trump. 
+
+```{r generation_voting, fig.cap="Distribution of Voting Preferences", echo=FALSE}
+ggplot(analytical_data, aes(x=vote))+
+  geom_bar(fill=c("#0000FF", "#FF0000", "#00FF00", "#FFFF00"))+
+  labs(title= "Distribution of Voting Preference",
+       x="Voter Preference", y="Number of Respondents")+ theme_bw()
+```
+
+In order to see the distribution of the respondents across my key variables, I have also included below descriptive univariate graphs illustrating respondent distribution on immigrant generation level and degree of religiosity. Clearly, most of the respondents in Figure 3 were first generation immigrants, comprising over half of the sample. Distribution of respondents based on religious importance in Figure 4 was equally disporportionate. Respondents are distributed into categories based on answers they provided to the question, "How important is religion in your every day life?" 421 Respondents perceived relgion as a fundamental aspect of their lives while only 20 assigned it of little importance. 
+
+```{r immigrant_generation, fig.cap="Distribution of generation", echo=FALSE}
+ggplot(analytical_data, aes(x=generation))+
+  geom_bar(fill=c("#0000FF", "#FF0000", "#00FF00", "#FFFF00"))+
+  labs(title= "Distribution of Immigrant Generation Level",
+       x="Immigrant Generation Level", y="Number of Respondents")+
+  theme_bw()
+```
+
+```{r generation, fig.cap="Distribution of religion", echo=FALSE}
+ggplot(analytical_data, aes(x=religion))+
+  geom_bar(fill=c("#0000FF", "#FF0000", "#00FF00", "#FFFF00"))+
+  labs(title= "Distribution of Religious Importance",
+       x="Religious Affiliation", y="Number of Respondents")+
+  theme_bw()
+```
+
+In the following section, I have included information on voting patterns based on concerns for degree of religiosity and immigrant generation levels. In the first instance, we see that out of the total number of respondents who found religion to be an important part of their lives, 81.7% of them voted in the last election. Similarly, out of the respondents who assigned little weight to religious importance, 85% voted in the last election. In the second instance, 83.3% of first generation immigrants reported voting in the last election. Similar patterns hold for third generation voters as well as 82.1% of respondents reported voting. 
+
+```{r religion_voting, fig.cap="Voting Patterns by Religion", echo=FALSE}
+reli_yes_vote <- table(analytical_data$religion, analytical_data$yesvote) 
+reli_yes_vote_pct <- (reli_yes_vote / rowSums(reli_yes_vote)*100)
+reli_yes_vote_pct
+```
+
+```{r generation_yesvoting, fig.cap="Voting Patterns by Generation", echo=FALSE}
+gen_voted <- table(analytical_data$generation, analytical_data$yesvote)
+gen_voted_pct <- gen_voted / rowSums(gen_voted)*100
+gen_voted_pct
+```
+
+As we further meet at the intersection between religiosity and voting patterns, we see variation among religious levels and candidate/party choice. Once again, there are correlations between those who find religion very important and those who do not as both categories include large percentages of respondents who did not partake in the election. 
+```{r religion_voting2, fig.cap="Voting Patterns by Religion", echo=FALSE}
+reli_voted <- table(analytical_data$religion, analytical_data$vote)
+reli_voted_pct <- reli_voted /rowSums(reli_voted)*100
+reli_voted_pct
+```
+
+For the next case, I have included information on denomination. Although I hypothesized that a Sunni/Shia differentiation would lead to positive conservative voting behavior for Shiites and negative correlation for Sunnis, we see the reverse. There is a slightly higher percentage of Shiites who voted for Clinton over Trump than Sunnis. Surprisingly, those who did not vote frequented non-denominational or 'other' categories. 
+
+```{r denomyn_voting, fig.cap="Voting Patterns by Denom", echo=FALSE}
+denom_voted <- table(analytical_data$denom, analytical_data$vote)
+denom_voted_pct <- denom_voted / rowSums(denom_voted)*100
+denom_voted_pct
+```
+
+In the next section I have included sets of bivariate plots that better illustrate findings across immigrant generation and religiosity levels. In Figure 5, we can compare voting behavior by generation. Although there is some variation for second generation immigrants in that we see an increase in third party voting, this graph shows significant voting patterns for Clinton across all generation levels, and large voting abstinence for the first and third generation immigrants. 
+
+```{r vote-generation, echo=FALSE, fig.cap="Voting behavior by generation"}
+ggplot(analytical_data, aes(x=vote, y=..prop.., group=1))+
+  geom_bar()+
+  facet_wrap(~generation)+
+  labs(title= "Voting behavior by generation", x="Candidate choice", y="proportion")+
+  theme_bw()
+```
+
+In understanding the correlation between my two key variables, the next bivariate plot (Figure 6), looks at the distribution of respondents based on immigrant generation and religiosity levels. The most interesting finding here is that contrary to my hypothesis that religiosity levels would increase among immigrants of higher generations, we see the reverse. Although there is a decrease between first and second generation immigrants, 2.5 generation begins to show an increase. We see a significant increase in third generation immigrants and can estimate that third generation immigrants are the most religious generation from this sample. 
+
+```{r religion-generation, echo=FALSE, fig.cap="Impact of Generation levels on Degree of Religiosity"}
+ggplot(analytical_data, aes(x=religion, y=..prop.., group=1))+
+  geom_bar()+
+  facet_wrap(~generation)+
+  labs(title= "Impact of Generation levels on Degree of Religiosity", x="Generation level", y="Degree of Religiosity")+
+  theme_bw()
+```
+
+In Figure 7, we can see the distribution of respondents of varying religious significance and their voting behaviors. Once again surprising, those who found religion not to be at all important voted the most for Trump. I initially hypothesized that as one becomes less religious, their level of political participation would decline. Although we do see a significant number of respondents who did not vote, this number does not trump the respondents who did not vote and found religion to be very important, showing that an increase in religious behavior is not likely to induce voting anymore than a decrease in such belief. 
+
+```{r vote-religion, echo=FALSE, fig.cap="Voting Behavior by Degree of Religiosity"}
+ggplot(analytical_data, aes(x=vote, y=..prop.., group=1))+
+  geom_bar()+
+  facet_wrap(~religion)+
+  labs(title= "Voting Behavior by Degree of Religiosity", x="Candidate choice", y="Degree of Religiosity")+
+  theme_bw()
+```
+
+In a shadow case, I wanted to demonstrate the variation of political participation across birth regions to demonstrate why this information does not benefit our understanding of Muslim voting patterns. As is visible in the graph below, we do not infer any substantial information other than the fact that the largest number of Muslim Trump voters came from Europe and the largest number of Muslim Clinton voters were third-generation Muslims - i.e. U.S. native-born respondents. 
+
+Now we can move on to linear models where we can make predictions based on our results. Our first model as seen in Table 1 below shows some statistical significance for religiosity by generation. Based on the model we can predict that, on average, third generation Muslims are .05% (.02 on a 4 point scale) more likely to be religious than first generation Muslims. 
+\newpage
+```{r religiosity-generation-model, results='asis', echo=FALSE}
+analytical_data$relig_score <-  5-as.numeric(analytical_data$religion)
+model <- lm(relig_score~generation, data=analytical_data)
+texreg(model, 
+        caption = "Predicting religiosity score by generation",
+        caption.above = TRUE,
+        doctype = FALSE)
+```
+\newpage
+For Table 2, we can make a similar statistically significant prediction for the 50+ age group. The model predicts that, on average, 50+ years of age Muslims are twice as likely to vote than people in the 18-29 years of age bracket. Although we are unsure of the correlative effect, we can assume that like the rest of the status quo in the U.S., age incentivizes older Muslims to be politically active as they may have more time for these activities. Politics may also affect their finances at higher levels inducing participation in order to vocalize fiscal preferences. 
+\newpage
+```{r voting-generation-model, results='asis', echo=FALSE}
+model2.lpm <- glm(vote!="No vote"~generation + I(religion=="Very Important")+factor(age), data=analytical_data, family=binomial)
+texreg(model2.lpm, 
+        caption = "Predicting Voting by Age Bracket",
+        caption.above = TRUE,
+        doctype = FALSE)
+```
+
+When we try to reproduce this outcome for voting predictions for Trump in Table 3, we see that generation level and age do not appear to be signficant factors in predicting support for Trump. Compared to first generation immigrants, there are slight increases. Second generation and 2.5 generation immigrants are more likely to vote for Trump than first generation immigrants. This could be due to higher integration levels that make people more likely to prefer other parties or potentially due to the fact that having one native-born parent can facilitate conservatism. 
+
+```{r trump-interaction-model, results='asis', echo=FALSE}
+model.lpm <- glm(vote=="Trump"~generation + factor(age), data= analytical_data, family=binomial)
+texreg(model.lpm, 
+        caption = "Predicting Trump Support by Age Bracket",
+        caption.above = TRUE,
+        doctype = FALSE)
+```
+
+Although none of the factors predict voting preferences for Clinton, first generation are more likely to vote for Clinton although the effect is, on aggregate, not statistically significant. Those that find religion to be less important, are more likely to vote for Clinton than those who place greater importance on religion.
+
+```{r clinton-interaction-model, results='asis', echo=FALSE}
+model.lpm <- lm(vote=="Clinton"~generation + religion, data= analytical_data)
+texreg(model.lpm, 
+        caption = "Predicting Clinton support by religiosity score and generation",
+        caption.above = TRUE,
+        doctype = FALSE)
+```
+
+In our last table below (Table 5), we once more do not see strongly statistically significant results. Immigrants are more likely to vote compared to people who are native-born. Immigrants who value religion find voting to be more important over those who do not find religion to be of importance. The interaction variables are not very statistically significant. Those who find religion somewhat important affects people who are third generation and makes them more likely to vote. There do seem to be negative effects for second generation immigrants as they find religion less important which all negatively affects voting outcomes. In sum, religion affects native-born respondents the most, especially those who have resided in the United States for a few generations. 
+
+```{r novote-interaction-model, results='asis', echo=FALSE}
+model.lpm <- lm(vote=="No vote"~generation + religion + factor(age) + generation*religion, data= analytical_data)
+texreg(model.lpm, 
+        caption = "Predicting the lack of voting by generation",
+        caption.above = TRUE,
+        doctype = FALSE)
+```
+
+
+\newpage
 
 # Conclusions
+
+Although we have not arrived at any statistically significant findings, the data has shown some interesting correlations. We see that Muslim immigrants are much more likely to vote than the average American and that there are no significant variations among generations in predicting the likelihood of voter participation. When we look more closely to analyze voting behavior, we see Muslims voted the least for Trump, although significant numbers of voters chose not to vote at all or vote third-party. There were some variations among second generation immigrants, but by and large immigrant generation levels are not good predictors of voting outcome according to these models. 
+
+In looking at the correlations between religiosity and immigrant generation levels, we find another surprising correlation as third generation immigrants reported feeling religion as most important. This outcome negated my earlier hypothesis that religious sentiments would lull with increased generations. Of course, one cannot look at immigrant generation levels without accounting for age. In accounting for age, we saw that 50+ year old Muslims were more likely to be politically active. We also did not see variation in religious denomination despite predicting Shiites would be more likely to vote for Trump. In fact, our analysis shows that Sunnis voted conservatively over other denominational groups. 
+
+Interestingly, many of our analyses showed parabola-type relationships where we saw some increase between first and second generation immigrants but a reversal between second and third generations, with third generation immigrants much more likely to mirror first generation immigrants in several regards. Contrary to popular thought, we can infer that the gap between these two generations is perceivably much more narrow than we think. 
+
+Lastly, in regards to our original question, we can assume that voter participation has steadily increased since the Ayers and Hofstetter's 2008 article but we have not seen electoral spikes that mirror the 20% increase following 9-11. If anything, we can infer that Muslim immigrants have continued to be engaged politically at a stable rate over the last two decades and that their political activity is not dependent upon how long they have been in America or how strongly they feel about their religion. 
+
+
 
 # References
 

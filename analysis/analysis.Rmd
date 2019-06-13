@@ -14,19 +14,81 @@ source("useful_functions.R")
 load("output/analytical_data.RData")
 library(ggplot2)
 library(texreg)
+analytical_data$yesvote <- analytical_data$vote != "No vote"
+getwd()
 ```
 
-# Univariate distributions
+### Univariate distributions
 
+#generation distribution
 ```{r generation, fig.cap="Distribution of generation"}
 ggplot(analytical_data, aes(x=generation))+
-  geom_bar()+
+  geom_bar(fill=c("#0000FF", "#FF0000", "#00FF00", "#FFFF00"))+
+  labs(title= "Distribution of Immigrant Generation Level",
+       x="Immigrant Generation Level", y="Number of Respondents")+
   theme_bw()
 ```
 
 It looks like the 2.5 gengeration is quite small, may need to think about collapsing this for the actual analysis.
 
-# Bivariate plots
+#religiosity distribution 
+```{r generation, fig.cap="Distribution of religion"}
+ggplot(analytical_data, aes(x=religion))+
+  geom_bar(fill=c("#0000FF", "#FF0000", "#00FF00", "#FFFF00"))+
+  labs(title= "Distribution of Religious Importance",
+       x="Religious Affiliation", y="Number of Respondents")+
+  theme_bw()
+```
+
+Very few said religion is not at all important, but I'll keep it as to show high degree of religioisty and not because there are few respondents in the category.
+
+#Voting distribution
+```{r generation, fig.cap="Distribution of Voting Preferences"}
+ggplot(analytical_data, aes(x=vote))+
+  geom_bar(fill=c("#0000FF", "#FF0000", "#00FF00", "#FFFF00"))+
+  labs(title= "Distribution of Voting Preference",
+       x="Voter Preference", y="Number of Respondents")+ theme_bw()
+```
+
+Should I be concerned that it's only showing 450ish people have answered this?
+
+```{r voting_patterns, fig.cap="Distribution of Respondents Who Voted"}
+ggplot(analytical_data, aes(x=yesvote))+
+  geom_bar(fill='darkblue')+
+  labs(title= "Distribution of Respondents Who Voted",
+       x="Voted", y="Number of Respondents")+
+  theme_bw()
+```
+
+```{r religion_voting, fig.cap="Voting Patterns by Religion"}
+reli_yes_vote <- table(analytical_data$religion, analytical_data$yesvote) 
+reli_yes_vote_pct <- (reli_yes_vote / rowSums(reli_yes_vote)*100)
+reli_yes_vote_pct
+```
+
+```{r generation_voting, fig.cap="Voting Patterns by Generation"}
+gen_voted <- table(analytical_data$generation, analytical_data$yesvote)
+gen_voted_pct <- gen_voted / rowSums(gen_voted)*100
+gen_voted_pct
+```
+
+```{r religion_voting, fig.cap="Voting Patterns by Religion"}
+reli_voted <- table(analytical_data$religion, analytical_data$vote)
+reli_voted_pct <- reli_voted /rowSums(reli_voted)*100
+reli_voted_pct
+```
+```{r denomyn_voting, fig.cap="Voting Patterns by Denom"}
+denom_voted <- table(analytical_data$denom, analytical_data$vote)
+denom_voted_pct <- denom_voted / rowSums(denom_voted)*100
+denom_voted_pct
+```
+
+```{r age_voting, fig.cap="Voting Patterns by Age"}
+age_voted <- table(analytical_data$age, analytical_data$vote)
+age_voted_pct <- age_voted / rowSums(age_voted)*100
+age_voted_pct
+```
+### Bivariate plots
 
 ```{r vote-generation, echo=FALSE, fig.cap="Voting behavior by generation"}
 ggplot(analytical_data, aes(x=vote, y=..prop.., group=1))+
@@ -36,12 +98,77 @@ ggplot(analytical_data, aes(x=vote, y=..prop.., group=1))+
   theme_bw()
 ```
 
+```{r religion-generation, echo=FALSE, fig.cap="Impact of Generation levels on Degree of Religiosity"}
+ggplot(analytical_data, aes(x=religion, y=..prop.., group=1))+
+  geom_bar()+
+  facet_wrap(~generation)+
+  labs(x="Generation level", y="Degree of Religiosity")+
+  theme_bw()
+```
+
+Interesting. Third Generation Muslims are the most religious while 2nd generations are the least. Although you see a small spike in this # for 2.5 gens.
+
+```{r vote-religion, echo=FALSE, fig.cap="Voting Behavior by Degree of Religiosity"}
+ggplot(analytical_data, aes(x=vote, y=..prop.., group=1))+
+  geom_bar()+
+  facet_wrap(~religion)+
+  labs(title= "Voting Behavior by Degree of Religiosity", x="Candidate choice", y="Degree of Religiosity")+
+  theme_bw()
+```
+It's pretty even. Muslims voted for Clinton despite religiosity levels. But interestingy, those who didn't think religion was very important, voted 3rd party. So the variation isn't conditioned by religon between those who voted for Clinton and Trump. Voting 3rd party or not voting at all seems more imporant here.
+
 # Run some models
 
+```{r vote-birthregion, echo=FALSE, fig.cap="voting behavior by birth region"}
+ggplot(pew_muslim_data, aes(x=pvote16b, y=..prop.., group=1))+
+  geom_bar()+
+  facet_wrap(~respondent_birthregion2)+
+  labs(x="Candidate choice", y="proportion")+
+  coord_flip()
+```
+
+
+
+
+
 ```{r religiosity-generation-model, results='asis'}
+#table(analytical_data$religion)
+#table(analytical_data$relig_score)
 analytical_data$relig_score <-  5-as.numeric(analytical_data$religion)
 model <- lm(relig_score~generation, data=analytical_data)
-htmlreg(model, 
+screenreg(model, 
+        caption = "Predicting religiosity score by generation",
+        caption.above = TRUE,
+        doctype = FALSE)
+```
+
+```{r voting-interaction-model, results='asis'}
+model.lpm <- glm(vote!="No vote"~generation + I(religion=="Very Important")+factor(age), data= analytical_data, family=binomial)
+screenreg(model.lpm, 
+        caption = "Predicting Voting by Age Bracket",
+        caption.above = TRUE,
+        doctype = FALSE)
+```
+
+```{r trump-interaction-model, results='asis'}
+model.lpm <- glm(vote!="Trump"~generation + I(religion=="Very Important")+factor(age), data= analytical_data, family=binomial)
+screenreg(model.lpm, 
+        caption = "Predicting Trump Support by Age Bracket",
+        caption.above = TRUE,
+        doctype = FALSE)
+```
+
+```{r clinton-interaction-model, results='asis'}
+model.lpm <- lm(vote=="Clinton"~generation + religion + generation*religion, data= analytical_data)
+screenreg(model.lpm, 
+        caption = "Predicting religiosity score by generation",
+        caption.above = TRUE,
+        doctype = FALSE)
+```
+
+```{r novote-interaction-model, results='asis'}
+model.lpm <- lm(vote=="No vote"~generation + religion + generation*religion, data= analytical_data)
+screenreg(model.lpm, 
         caption = "Predicting religiosity score by generation",
         caption.above = TRUE,
         doctype = FALSE)

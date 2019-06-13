@@ -9,9 +9,6 @@
 #source in any useful functions
 
 source("useful_functions.R")
-library(readr)
-muslim_politics <- read.csv("input/pew_muslim_data.csv")
-
 library(haven)
 muslim_politics <- read_dta("input/Muslim-American-Final-Questionnaire/2017USMuslimPublicData - checked.dta")
 
@@ -41,12 +38,33 @@ muslim_politics$generation <- factor(ifelse(muslim_politics$respondent_birthregi
 levels=c("First Generation", "Second Generation", "2.5 Generation", "Third Generation"))
 table(muslim_politics$generation)
 
+muslim_politics$denom <- factor(ifelse(muslim_politics$qz1rec==9, NA,
+                                       ifelse(muslim_politics$qz1rec==5, "Non-Denominational",
+                                              ifelse(muslim_politics$qz1rec==3, "Other",
+                                                     ifelse(muslim_politics$qz1rec==2, "Sunni",
+                                                            "Shia")))),
+levels=c("Shia","Sunni","Other","Non-Denominational"))
+
 table(muslim_politics$father_birthregion2, muslim_politics$mother_birthregion2)
 
 ## a bunch of other stuff
 
+muslim_politics$age <- factor(ifelse(muslim_politics$agerec>12, NA, 
+                                     ifelse(muslim_politics$agerec<4, "18-29",
+                                            ifelse(muslim_politics$agerec<8, "30-49", "50+"))),
+                              levels=c("18-29", "30-49", "50+"))
+
 analytical_data <- subset(muslim_politics, !is.na(vote),
-                          select=c("vote","generation","religion"))
+                          select=c("vote","generation","religion",
+                                   "respondent_birthregion2", "denom","age"))
 
 save(analytical_data, file="output/analytical_data.RData")
 
+#analytical_data$generation.n <- as.numeric(as.character(analytical_data$generation))
+#analytical_data$religion.n <- as.numeric(as.character(analytical_data$religion))
+
+#interact <-lm(vote ~ generation.n + religion.n + generation.n*religion.n, data = analytical_data)
+
+model.lpm <- lm(vote=="Trump"~generation + religion + generation*religion, data= analytical_data)
+
+summary(model.lpm)
